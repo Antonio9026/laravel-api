@@ -36,7 +36,7 @@ class ProjectController extends Controller
     //    il create fa sia il fill che il save in unico comando
         $project = Project::create($data);
 
-        return redirect()->route("admin.projects.show")
+        return redirect()->route("admin.projects.show");
 
     }
 }

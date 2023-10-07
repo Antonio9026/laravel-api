@@ -24,12 +24,25 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// raggruppo le rotte 
+Route::middleware(["auth", "verified"])
+->prefix("admin")
+->name("admin.")
+->group(function(){
 // CREATE 
-Route::get("/admin/projects/create", [ProjectController::class, "create"])->name("admin.projects.create");
-Route::get("/admin/projects", [ProjectController::class, "store"])->name("admin.projects.store");
+Route::get("/projects/create", [ProjectController::class, "create"])->name("projects.create");
+Route::get("/projects", [ProjectController::class, "store"])->name("projects.store");
 // READ 
-Route::get("/admin/projects", [ProjectController::class, "index"])->name("admin.projects.index");
-Route::get("/admin/projects/{project}", [ProjectController::class, "show"])->name("admin.projects.show");
+Route::get("/projects", [ProjectController::class, "index"])->name("projects.index");
+Route::get("/projects/{project}", [ProjectController::class, "show"])->name("projects.show");
+
+
+});
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
