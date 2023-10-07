@@ -18,6 +18,7 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::findOrFail($id);
+
         return view("admin.projects.show", compact("project"));
     }
     public function create()
@@ -26,17 +27,16 @@ class ProjectController extends Controller
     }
     public function store(Request $request)
     {
-        $data = $request->validate([
-            "title"=>"required",
-            "description"=>"required",
-            "image"=>"required",
-            "github_link"=>"required",
-        ]);
 
-    //    il create fa sia il fill che il save in unico comando
+        $data = $request->validate([
+            "title" => "required",
+            "description" => "required",
+            "image" => "required",
+            "github_link" => "required",
+        ]);
         $project = Project::create($data);
 
-        return redirect()->route("admin.projects.show");
 
+        return redirect()->route("admin.projects.show",$project->id);
     }
 }

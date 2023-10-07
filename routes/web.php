@@ -31,7 +31,7 @@ Route::middleware(["auth", "verified"])
 ->group(function(){
 // CREATE 
 Route::get("/projects/create", [ProjectController::class, "create"])->name("projects.create");
-Route::get("/projects", [ProjectController::class, "store"])->name("projects.store");
+Route::post("/projects", [ProjectController::class, "store"])->name("projects.store");
 // READ 
 Route::get("/projects", [ProjectController::class, "index"])->name("projects.index");
 Route::get("/projects/{project}", [ProjectController::class, "show"])->name("projects.show");
