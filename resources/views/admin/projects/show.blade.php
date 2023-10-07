@@ -11,7 +11,7 @@
     <div class="series">
         <h1>{{$project->title}}</h1>
         <p>{{$project->description}}</p>
-        <a href="{{$project->github_link}}"></a>
+        <a href="{{$project->github_link}}">GitHub_link</a>
     </div>
 
     

@@ -2,8 +2,8 @@
 
 @section("content")
     <h1>lista progetti</h1>
-    <div class="rotta-create">
-        <a href="{{route("admin.projects.create")}}"></a>
+    <div class="rotta-create ">
+        <a href="{{route("admin.projects.create")}}">Nuovo progetto</a>
     </div>
     <div class="container-dc">    
         <div class="card-wrapper">
@@ -22,6 +22,7 @@
                 <div class="modifica">
                     <a href=" {{ route('admin.projects.show',$project->id) }} ">Dettagli</a>
                 </div>
+               
             </div>
             @endforeach
         </div>
