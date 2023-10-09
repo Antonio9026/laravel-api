@@ -36,7 +36,13 @@ Route::post("/projects", [ProjectController::class, "store"])->name("projects.st
 Route::get("/projects", [ProjectController::class, "index"])->name("projects.index");
 Route::get("/projects/{project}", [ProjectController::class, "show"])->name("projects.show");
 
+// UPDATE 
 
+Route::get("/projects/{id}/edit",[ProjectController::class,"edit"])->name("projects.edit");
+Route::put("/projects/{id}", [ProjectController::class,"update"])->name("projects.update");
+
+// DESTROY 
+Route::delete("/projects/{id}",[ProjectController::class, "destroy"])->name("projects.destroy");
 });
 
 

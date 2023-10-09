@@ -16,7 +16,7 @@
             <label>gitHub Link:</label><br>
             <input type="text" name="github_link"><br><br>
             <button>Salva</button>
-            <a href="{{ route('projects.index') }}"><button>Annulla</button></a>
+            <a href="{{ route('admin.projects.index') }}"><button>Annulla</button></a>
         </form>
     </div>
 @endsection

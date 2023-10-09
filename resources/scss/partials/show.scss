@@ -1,0 +1,29 @@
+// uoi
+// .container{
+//     display: flex;
+//     justify-content: center;
+// }
+.card-wrapper-show{
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 30px;
+  // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(228,128,43,1) 100%, rgba(0,212,255,1) 100%);
+  box-shadow: 5px 10px 10px rgb(2,0,36);;
+}
+.card_show{
+    width: 250px;
+    margin: 40px 0;
+}
+
+  .img-container-show{
+    width: 250px;
+    border-radius: 20px 10px;
+   
+  }
+  .img-container-show img{
+
+    width: 100%;
+  }
+
