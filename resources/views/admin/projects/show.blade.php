@@ -4,7 +4,7 @@
     <div class="routes">
         <a href="{{ route('admin.projects.index') }}"><button>torna indietro</button></a>
     </div>
-    <div class="container">
+    <div class="container-show">
         <div class="card-wrapper-show">
             <div class="card_show">
 
@@ -26,4 +26,5 @@
             </div>
         </div>
     </div>
+    
 @endsection

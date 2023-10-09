@@ -2,13 +2,13 @@
 
 @section('content')
    
-    <div class="container-form">
+    <div class="container-create">
         <form action="{{ route('admin.projects.store')}}" method="POST">
            
             @csrf()
 
-            <label>Titolo:</label><br>
-            <input type="text" name="title"><br>
+            <label class="create-label">Titolo:</label><br>
+            <input class="create-input" type="text" name="title"><br>
             <label>Descrizione:</label><br>
             <textarea type="text" name="description"></textarea><br><br>
             <label>Immagine:</label><br>
