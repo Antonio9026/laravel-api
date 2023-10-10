@@ -9,7 +9,7 @@
             <div class="card_show">
 
                 <div class="img-container-show">
-                    <img src="{{ $project->image }}" alt="">
+                    <img src="{{ asset("/storage/" .$project->image ) }}" alt="">
                 </div>
 
                 <div class="series">
@@ -17,11 +17,7 @@
                     <p>{{ $project->description }}</p>
                     <a href="{{ $project->github_link }}"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button>Elimina</button>
-                </form>
+               
 
             </div>
         </div>

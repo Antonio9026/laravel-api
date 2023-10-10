@@ -3,20 +3,20 @@
 @section('content')
    
     <div class="container-create">
-        <form action="{{ route('admin.projects.store')}}" method="POST">
+        <form class="form-create" action="{{ route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
            
             @csrf()
 
             <label class="create-label">Titolo:</label><br>
             <input class="create-input" type="text" name="title"><br>
-            <label>Descrizione:</label><br>
-            <textarea type="text" name="description"></textarea><br><br>
-            <label>Immagine:</label><br>
-            <input type="text" name="image"><br>
-            <label>gitHub Link:</label><br>
-            <input type="text" name="github_link"><br><br>
-            <button>Salva</button>
-            <a href="{{ route('admin.projects.index') }}"><button>Annulla</button></a>
+            <label class="create-label">Descrizione:</label><br>
+            <textarea class="create-input"  type="text" name="description"></textarea><br><br>
+            <label class="create-label">Immagine:
+            <input class="create-input" accept="image/*" type="file" name="image"><br></label><br>
+            <label class="create-label">gitHub Link:</label><br>
+            <input class="create-input"  type="text" name="github_link"><br><br>
+            <button class="create-button">Salva</button>
+            <button class="create-button"><a href="{{ route('admin.projects.index') }}"></a>Annulla</button>
         </form>
     </div>
 @endsection

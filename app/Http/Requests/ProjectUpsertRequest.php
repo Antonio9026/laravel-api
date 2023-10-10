@@ -24,7 +24,7 @@ class ProjectUpsertRequest extends FormRequest
         return [
             "title" => "required",
             "description" => "required",
-            "image" => "required",
+            "image" => "required|image|max:3072",
             "github_link" => "required",
         ];
     }

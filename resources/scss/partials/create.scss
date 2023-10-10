@@ -1,4 +1,26 @@
-.container-create{
+.container-create {
     display: flex;
     justify-content: center;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+
+    .form-create {
+        margin: 40px 0;
+        .create-label {
+            margin: 5px 0;
+        }
+
+        .create-input {
+            width: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+        .create-button{
+            min-width: 150px;
+            height: 40px;
+            margin-top: 20px;
+            background:linear-gradient(to right, #00c6ff, #0072ff);
+            border:1px solid #4b6cb7;
+            border-radius: 40px;
+        }
+    }
 }

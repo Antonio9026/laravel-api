@@ -13,7 +13,7 @@
 
 .card-wrapper-index {
   width: calc(100% / 6);
-  width: 300px;
+  width: 250px;
   display: flex;
   flex-wrap: wrap;
   padding-top: 20px;
@@ -27,11 +27,11 @@
 
 .card-index {
 
-  width: 250px;
+  width: 200px;
   margin: 10px 0;
 
   .img-container-index {
-    width: 240px;
+    width: 200px;
 
     margin: 40px 0;
 
@@ -54,6 +54,8 @@
 
 }
 .new-project{
+  display: block;
+  min-width: 150px;
   height: 40px;
   margin-top: 20px;
   background:linear-gradient(to right, #00c6ff, #0072ff);
