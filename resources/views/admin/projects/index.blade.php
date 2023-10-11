@@ -27,6 +27,7 @@
                         <h1>{{ $project->title }}</h1>
                         <p>{{ $project->description }}</p>
                         <a href="{{ $project->github_link }}"></a>
+                        <p>{{$project->type->type}}</p>
                     </div>
                     <div class="modifica">
                         <button>
