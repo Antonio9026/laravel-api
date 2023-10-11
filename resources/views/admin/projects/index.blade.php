@@ -19,9 +19,9 @@
             <div class="card-wrapper-index">
                 <div class="card-index">
 
-                    <div class="img-container-index">
+                    {{-- <div class="img-container-index">
                         <img src="{{asset("/storage/" .$project->image ) }}" alt="">
-                    </div>
+                    </div> --}}
 
                     <div class="series-index">
                         <h1>{{ $project->title }}</h1>

@@ -11,8 +11,8 @@
             <input class="create-input" type="text" name="title"><br>
             <label class="create-label">Descrizione:</label><br>
             <textarea class="create-input"  type="text" name="description"></textarea><br><br>
-            <label class="create-label">Immagine:
-            <input class="create-input" accept="image/*" type="file" name="image"><br></label><br>
+            {{-- <label class="create-label">Immagine:
+            <input class="create-input" accept="image/*" type="file" name="image"><br></label><br> --}}
             <label class="create-label">gitHub Link:</label><br>
             <input class="create-input"  type="text" name="github_link"><br><br>
             <button class="create-button">Salva</button>
