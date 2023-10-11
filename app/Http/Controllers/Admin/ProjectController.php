@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\ProjectUpsertRequest;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,14 +26,17 @@ class ProjectController extends Controller
     }
     public function create()
     {
+        $types = Type::all();
 
-        return view("admin.projects.create");
+        return view("admin.projects.create",[
+            "types"=>$types ]);
     }
     public function store(ProjectUpsertRequest $request)
     {
 
         $data = $request->validated();
-
+        // dd($data);
+        
         //    salvo il file in filesystem
         $data["image"] = Storage::put("projects", $data["image"]);
 

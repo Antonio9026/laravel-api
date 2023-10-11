@@ -12,16 +12,16 @@
     </div>
 
     <div class="container-index">
-        {{-- <div class="rotta-create ">
+        <div class="rotta-create ">
             <button class="new-project"><a href="{{ route('admin.projects.create') }}">Nuovo progetto</a></button>
-        </div> --}}
+        </div>
         @foreach ($projects as $project)
             <div class="card-wrapper-index">
                 <div class="card-index">
 
-                    {{-- <div class="img-container-index">
+                    <div class="img-container-index">
                         <img src="{{asset("/storage/" .$project->image ) }}" alt="">
-                    </div> --}}
+                    </div>
 
                     <div class="series-index">
                         <h1>{{ $project->title }}</h1>

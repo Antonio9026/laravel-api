@@ -20,11 +20,11 @@
                 <label>Descrizione:</label><br>
                 <textarea type="text" name="description">{{ $projects->description }}</textarea><br><br>
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label>Immagine:</label><br>
                 <input type="file" accept="image/*" name="image"><br>
                 </label><br>
-            </div> --}}
+            </div>
             <div class="mb-3">
                 <label>Github_link:</label><br>
                 <input type="text" name="github_link" value="{{ $projects->github_link }}"><br><br>

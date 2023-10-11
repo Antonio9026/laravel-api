@@ -7,14 +7,23 @@
            
             @csrf()
 
-            <label class="create-label">Titolo:</label><br>
-            <input class="create-input" type="text" name="title"><br>
-            <label class="create-label">Descrizione:</label><br>
-            <textarea class="create-input"  type="text" name="description"></textarea><br><br>
-            {{-- <label class="create-label">Immagine:
-            <input class="create-input" accept="image/*" type="file" name="image"><br></label><br> --}}
-            <label class="create-label">gitHub Link:</label><br>
-            <input class="create-input"  type="text" name="github_link"><br><br>
+            <label class="create-label">Titolo:<input class="create-input" type="text" name="title"><br></label><br>
+            
+            <label class="create-label">Descrizione: <textarea class="create-input"  type="text" name="description"></textarea><br><br></label><br>
+            
+<label  class="create-label"><select name="type_id" >
+ 
+    @foreach ($types as $type)
+    
+    <option value="{{$type->id}}">{{$type->type}}</option>
+    @endforeach
+    
+</select></label>
+
+            <label class="create-label">Immagine:
+            <input class="create-input" accept="image/*" type="file" name="image"><br></label><br>
+            <label class="create-label">gitHub Link: <input class="create-input"  type="text" name="github_link"><br><br></label><br>
+           
             <button class="create-button">Salva</button>
             <button class="create-button"><a href="{{ route('admin.projects.index') }}"></a>Annulla</button>
         </form>

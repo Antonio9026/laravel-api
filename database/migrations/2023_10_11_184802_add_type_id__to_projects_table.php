@@ -12,13 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
+            $table->unsignedBigInteger("type_id")->nullable()->after("id");
 
-            // crea la nuova colonna di tipo unsignedBigInteger 
-           $table->unsignedBigInteger("type_id")->nullable()->after("id");
-        //    rendo la colonna type_id una foreign key che fa riferimento alla colonna id della tabella projects
-           $table->foreign("type_id")->references("id")->on("projects")->onDelete("cascade");
-           
-
+            $table->foreign("type_id")->references("id")->on("types")->onDelete("cascade");
         });
     }
 
@@ -28,9 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            // rimuove la foreing key tramite l'id
             $table->dropForeign("projects_type_id_foreign");
-            // rimuove la colonna type_id
             $table->dropColumn("type_id");
         });
     }
