@@ -25,6 +25,14 @@
                 <input type="file" accept="image/*" name="image"><br>
                 </label><br>
             </div>
+            <label  class="create-label"><select name="type_id" >
+ 
+                @foreach ($types as $type)
+                
+                <option value="{{$type->id}}">{{$type->type}}</option>
+                @endforeach
+                
+            </select></label>
             <div class="mb-3">
                 <label>Github_link:</label><br>
                 <input type="text" name="github_link" value="{{ $projects->github_link }}"><br><br>
