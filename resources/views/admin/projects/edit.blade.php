@@ -26,7 +26,7 @@
                 </label><br>
             </div>
             <div class="mb-3">
-                <label>Prezzo:</label><br>
+                <label>Github_link:</label><br>
                 <input type="text" name="github_link" value="{{ $projects->github_link }}"><br><br>
             </div>
 
