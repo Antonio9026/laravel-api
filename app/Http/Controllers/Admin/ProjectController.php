@@ -51,8 +51,8 @@ class ProjectController extends Controller
     {
 
         $projects = Project::findOrFail($id);
-
-        return view("admin.projects.edit", ["projects" => $projects]);
+        $types = Type::all();
+        return view("admin.projects.edit", compact("projects" ,"types"));
     }
 
 

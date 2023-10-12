@@ -12,7 +12,7 @@
             <label class="create-label">Descrizione: <textarea class="create-input"  type="text" name="description"></textarea><br><br></label><br>
             
 <label  class="create-label"><select name="type_id" >
- 
+
     @foreach ($types as $type)
     
     <option value="{{$type->id}}">{{$type->type}}</option>

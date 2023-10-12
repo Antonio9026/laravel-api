@@ -26,9 +26,9 @@
                 </label><br>
             </div>
             <label  class="create-label"><select name="type_id" >
- 
+
                 @foreach ($types as $type)
-                
+            
                 <option value="{{$type->id}}">{{$type->type}}</option>
                 @endforeach
                 
