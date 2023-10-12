@@ -15,6 +15,11 @@
                 <div class="series">
                     <h1>{{ $project->title }}</h1>
                     <p>{{ $project->description }}</p>
+                    <div class="technologies">
+                        @foreach ($project->technologies as $technology)
+                            <p>{{$technology->name}}</p>
+                        @endforeach
+                    </div>
                     <a href="{{ $project->github_link }}"><i class="fa-brands fa-github"></i></a>
                 </div>
                

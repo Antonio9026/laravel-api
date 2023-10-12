@@ -25,14 +25,25 @@
                 <input type="file" accept="image/*" name="image"><br>
                 </label><br>
             </div>
-            <label  class="create-label"><select name="type_id" >
+            <label  class="create-label"></label>
+                <select name="type_id" >
 
                 @foreach ($types as $type)
             
                 <option value="{{$type->id}}">{{$type->type}}</option>
                 @endforeach
                 
-            </select></label>
+            </select>
+
+                <div class="container-technologies">
+                @foreach ($technologies as $technology)
+                
+            <div class="technology">
+                    <input type="checkbox"  name="technologies[]" value="{{$technology->id}}" {{$projects->technologies?->contains($technology) ? 'checked' : ''}}>
+                    <label >{{$technology->name}}</label>
+                </div>
+                @endforeach
+            </div>
             <div class="mb-3">
                 <label>Github_link:</label><br>
                 <input type="text" name="github_link" value="{{ $projects->github_link }}"><br><br>

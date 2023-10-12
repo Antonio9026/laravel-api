@@ -26,6 +26,11 @@
                     <div class="series-index">
                         <h1>{{ $project->title }}</h1>
                         <p>{{ $project->description }}</p>
+                        <div class="technologies">
+                            @foreach ($project->technologies as $technology)
+                                <p>{{$technology->name}}</p>
+                            @endforeach
+                        </div>
                         <a href="{{ $project->github_link }}"></a>
                         <p>{{$project->type->type}}</p>
                     </div>
