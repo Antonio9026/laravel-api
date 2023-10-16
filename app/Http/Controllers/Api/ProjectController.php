@@ -10,8 +10,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        // recupero dati dal database
-        $projects = Project::all();
+        // recupero dati dal database con la funzione paginate divido il mio array in pagine, tra parentesi indico il numero di progetti da visualizzare in view per ogni pagina
+        $projects = Project::with(["type","technologies"])->paginate(3);
 
         return response()->json([
             "message" => "Lista progetti",
