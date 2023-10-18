@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // rotta api 
 // non diamo un nome alle rotte api perchè non dobbiamo creare nessun link 
 Route::get("projects", [ProjectController::class, "index"]);
+
+Route::get("projects/{id}", [ProjectController::class, "show"]);

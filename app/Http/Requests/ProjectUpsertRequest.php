@@ -30,4 +30,15 @@ class ProjectUpsertRequest extends FormRequest
             "technologies" =>"nullable",
         ];
     }
+
+    public function messages(): array{
+        return[
+            "title.required" => "Il titolo è neccessario",
+            "description.required" => "La descrizione è neccessaria",
+            "image.required" =>"Non dimenticare l'immagine",
+            "github_link.required" => "Il link del progetto non è stato inserito",
+            "tecnologie.required" => "che tecnologie hai utilizzzato per questo progetto?"
+        ];
+        
+    }
 }

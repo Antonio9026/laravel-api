@@ -11,42 +11,54 @@
 
             @method('put')
             <div class="mb-3">
-
                 <label>Titolo:</label>
-                <input type="text" name="title" value="{{ $projects->title }}"><br>
+                <input class="@error('title') is-invalid @enderror" type="text" name="title"
+                    value="{{ $projects->title }}"><br>
+                @error('title')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
 
                 <label>Descrizione:</label><br>
-                <textarea type="text" name="description">{{ $projects->description }}</textarea><br><br>
+                <textarea class="@error('description')is-invalid @enderror" type="text" name="description">{{ $projects->description }}</textarea><br><br>
+                @error('description')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label>Immagine:</label><br>
-                <input type="file" accept="image/*" name="image"><br>
-                </label><br>
+                <input class="@error('image') is-invalid @enderror" type="file" accept="image/*" name="image"><br>
+                @error('image')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
-            <label  class="create-label"></label>
-                <select name="type_id" >
+            <div class="mb-3">
+                <label class="create-label"></label>
+                <select name="type_id">
 
-                @foreach ($types as $type)
-            
-                <option value="{{$type->id}}">{{$type->type}}</option>
-                @endforeach
-                
-            </select>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->type }}</option>
+                    @endforeach
 
-                <div class="container-technologies">
+                </select>
+            </div>
+            <div class="container-technologies">
                 @foreach ($technologies as $technology)
-                
-            <div class="technology">
-                    <input type="checkbox"  name="technologies[]" value="{{$technology->id}}" {{$projects->technologies?->contains($technology) ? 'checked' : ''}}>
-                    <label >{{$technology->name}}</label>
-                </div>
+                    <div class="technology">
+                        <input type="checkbox" name="technologies[]" value="{{ $technology->id }}"
+                            {{ $projects->technologies?->contains($technology) ? 'checked' : '' }}>
+                        <label>{{ $technology->name }}</label>
+                    </div>
                 @endforeach
             </div>
             <div class="mb-3">
                 <label>Github_link:</label><br>
-                <input type="text" name="github_link" value="{{ $projects->github_link }}"><br><br>
+                <input class="@error('github_link') is-invalid @enderror" type="text" name="github_link"
+                    value="{{ $projects->github_link }}"><br><br>
+                @error('github_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
 
